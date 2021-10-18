@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
-
-
+import 'package:flutter_design_patterns/views/screens/profile_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -19,8 +17,18 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text("Home Page"),
         ),
+        body: Center(
+          child: RaisedButton(
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext) => ProfileScreen()));
+            },
+            child: Text('Profile'),
+          ),
+        ),
       ),
-      
     );
   }
 }
